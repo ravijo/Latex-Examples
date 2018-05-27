@@ -14,8 +14,17 @@ ravi@home:~/Downloads/install-tl-20180527$ sudo ./install-tl
 ```
 *This takes more than 30 minutes. So take a coffee break!*
 
-[include](block-diagram/README.md)
-
-test
-
-![example-2](block-diagram/README.md)
+## Category
+* [Block Diagram](block-diagram/README.md)
+* [Code Formatting](code-formatting/README.md)
+* [Draw on Image](draw-on-image/README.md)
+* [Flowchart](flowchart/README.md)
+* [Magnify Glass](magnify-glass/README.md)
+* [Multiple Images](multiple-images/README.md)
+* [Neural Network](neural-network/README.md)
+* [Pie Chart](pie-chart/README.md)
+* [Plot CSV](plot-csv/README.md)
+* [Software Architecture](software-architecture/README.md)
+* [Standalone](standalone/README.md)
+* [Subfigure](subfigure/README.md)
+* [Tikz Coordinates](tikz-coordinates/README.md)
