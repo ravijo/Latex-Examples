@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[skip=0.333\baselineskip]{subcaption}
+\captionsetup[subfigure]{format=hang}
+% subfigure package is deprecated
+% this code uses subcaption package
+
+\begin{document}
+\begin{figure}[h]
+  \subcaptionbox{One line caption\label{fig:a}}%
+  {\includegraphics[width=0.3\linewidth]{example-image-a}}
+  \hspace{\fill}
+  \subcaptionbox{Slightly longer caption occupies 2 lines\label{fig:b}}%
+  {\includegraphics[width=0.3\linewidth]{example-image-b}}
+  \hspace{\fill}
+  \subcaptionbox{One line caption\label{fig:c}}%
+  {\includegraphics[width=0.3\linewidth]{example-image-c}}
+
+  \caption{Various example images}\label{fig:example_images}
+\end{figure}
+\end{document}

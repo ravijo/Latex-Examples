@@ -1,0 +1,25 @@
+\documentclass{article}%standalone can be used
+\usepackage{tcolorbox}
+\usepackage{listings}
+
+\begin{document}
+    \lstset{language=C++,
+        basicstyle=\ttfamily,
+        keywordstyle=\color{blue}\ttfamily,
+        stringstyle=\color{red}\ttfamily,
+        commentstyle=\color{green}\ttfamily,
+        morecomment=[l][\color{magenta}]{\#}
+    }
+\begin{lstlisting}
+#define DATA_TYPE_BYTES 4
+
+// receive data
+unsigned char* byte_ptr = 
+    static_cast<unsigned char*>(msg.data());
+
+// deserialize 
+int width;
+std::memcpy(&width, byte_ptr, DATA_TYPE_BYTES);
+byte_ptr += DATA_TYPE_BYTES;
+\end{lstlisting}
+\end{document}

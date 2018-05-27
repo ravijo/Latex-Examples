@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{subcaption}
+% subfigure package is deprecated
+% use either the subfig or the subcaption package
+% checkout example-3.tex that uses the subcaption package
+
+\begin{document}
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{example-image-a}
+  \caption{A subfigure}
+  \label{fig:sub1}
+\end{subfigure}% <-make sure to have it
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{example-image-b}
+  \caption{Another subfigure}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{A figure with two subfigures}
+\label{fig:test}
+\end{figure}
+
+
+\end{document}

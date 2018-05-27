@@ -1,0 +1,28 @@
+\documentclass{article}% standalone can be used after commenting /section lines
+\usepackage[formats]{listings}
+\lstdefineformat{C}
+{
+  \{=\newline\string\newline\indent,%
+  \}=\newline\noindent\string\newline,%
+  ;=[\ ]\string\space,%
+}
+
+\lstset{basicstyle=\ttfamily}
+
+\usepackage{filecontents}
+\begin{filecontents*}{sample.c}
+#include<stdio.h>
+void main()
+{
+printf("\n Hello World");
+}
+\end{filecontents*}
+
+\begin{document}
+
+\section*{``Raw'' listing}
+\lstinputlisting{sample.c}
+
+\section*{With automatic formatting}
+\lstinputlisting[format=C]{sample.c}
+\end{document}

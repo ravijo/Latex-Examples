@@ -1,0 +1,84 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listings}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, shapes.arrows, calc, positioning}
+
+\tikzstyle{box} = [rectangle, minimum width=2cm, minimum height=1.5cm, text centered, text width=3cm, draw=black, fill=#1]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+\begin{document}
+\begin{tikzpicture}[node distance=1mm]
+    \node (serialization) at (0, 0) {
+        \begin{tcblisting}{%
+                title=Serialization,
+                fonttitle=\LARGE,
+                colframe=red!60,
+                hbox,
+                listing only,
+                listing options={
+                    language=C++,
+                    basicstyle=\ttfamily,
+                    keywordstyle=\color{blue}\ttfamily,
+                    stringstyle=\color{red}\ttfamily,
+                    commentstyle=\color{green}\ttfamily,
+                    morecomment={[l][\color{magenta}]{\#}},
+                }
+            }
+const int DATA_TYPE_BYTES = 4;
+
+// define variables
+byte[] point_cloud;
+int size = 0;
+
+// create color
+int argb = (int)((alpha << 24) | (red << 16) 
+                | (green << 8) | blue);
+
+// serialize
+byte* byte_ptr = (byte*)&argb;
+for (int i = 0; i < DATA_TYPE_BYTES; i++)
+    point_cloud[size++] = byte_ptr[i];
+        \end{tcblisting}
+    };
+    
+    % source: https://tex.stackexchange.com/a/58515/49520
+    \node (zeromq) [right=of serialization, single arrow, draw=red, fill=red!50, text=white, text centered, text width=3cm, minimum width=3cm, font=\Large\bfseries] {ZeroMQ$^\star$ on multiple threads};
+    
+    \node (deserialization) [right=of zeromq] {
+        \begin{tcblisting}{
+                title=Deserialization,
+                hbox,
+                fonttitle=\LARGE,
+                colframe=red!60,
+                listing only,
+                listing options={
+                    language=C++,
+                    basicstyle=\ttfamily,
+                    keywordstyle=\color{blue}\ttfamily,
+                    stringstyle=\color{red}\ttfamily,
+                    commentstyle=\color{green}\ttfamily,
+                    morecomment={[l][\color{magenta}]{\#}},
+                }
+            }
+#define DATA_TYPE_BYTES 4
+
+// receive data
+unsigned char* data_ptr = 
+    static_cast<unsigned char*>(msg.data());
+
+// deserialize 
+int width;
+std::memcpy(&width, data_ptr, DATA_TYPE_BYTES);
+data_ptr += DATA_TYPE_BYTES;
+        \end{tcblisting}
+    };
+    
+    \node (windows) [below=1mm of serialization, font=\Large\bfseries] {Windows};
+    \node (ubuntu) [font=\Large\bfseries] at (deserialization|-windows) {Ubuntu};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{smartdiagram}
+\usesmartdiagramlibrary{additions}
+\begin{document}
+\smartdiagramset{%
+  back arrow disabled=true,
+  module minimum width=2cm,
+  module minimum height=2cm,
+  module x sep=3cm,
+  text width=2cm,
+  arrow style=->,
+  additions={
+    additional item offset=0.5cm,
+    additional item border color=red,
+    additional arrow color=red,
+    additional item width=2cm,
+    additional item height=2cm,
+    additional item text width=3cm,
+    additional item bottom color=red!50,
+    additional item shadow=drop shadow,
+  }
+}
+\smartdiagramadd[flow diagram:horizontal]{
+  Reward Function (R), Inverse Reinforcement Learning, Optimal Policy ($\pi$)
+}{below of module1/R that explains expert trajectories,above of module2/Environment Model (MDP), below of module3/Expert trajectories}
+\smartdiagramconnect{<-}{module2/additional-module2}
+\smartdiagramconnect{<-}{additional-module1/module1}
+\smartdiagramconnect{<-}{module3/additional-module3}
+\end{document}

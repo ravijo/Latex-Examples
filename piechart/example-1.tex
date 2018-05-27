@@ -1,0 +1,43 @@
+\documentclass{article}%standalone can be used
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+%% fix atan2 function
+\makeatletter
+\def\tikz@auto@anchor{%
+    \pgfmathtruncatemacro\angle{atan2(\pgf@y,\pgf@x)-90}
+    \edef\tikz@anchor{\angle}%
+}
+\makeatother
+
+\newcommand{\piechart}[1]{
+    \begin{scope}[nodes = {font=\tiny}]
+    \def\colorlist{{"orange","blue","gray","red","green","cyan","magenta"}}    
+    \def\angle{0}
+    \def\radius{2}
+    \newcount\colorcount \colorcount=-1
+    \newcount\ind \ind=-1
+    \foreach \percent/\name in{#1}{
+          \ifx\percent\empty\else               % If \percent is empty, do nothing
+            \global\advance\colorcount by 1     % Advance colorcount
+            \global\advance\ind by 1            % Advance list index
+            \ifnum6<\colorcount                 % If colorcount is larger than list
+              \global\colorcount=0              %   reset colorcount and
+              \global\ind=0                     %   reset list index
+            \fi
+            \pgfmathparse{\colorlist[\the\ind]} % Get color from color list
+            \edef\color{\pgfmathresult}         %   and store as \color
+            \draw[fill={\color!50},draw={\color}] (0,0) -- (\angle:\radius) arc (\angle:\angle+\percent*3.6:\radius) -- cycle;
+            \node[pin={[pin distance=3*\radius]\angle+0.5*\percent*3.6:{\name~[\percent\%]}}] at (\angle+0.5*\percent*3.6:\radius) {};
+            \pgfmathparse{\angle+\percent*3.6}  % Advance angle
+            \xdef\angle{\pgfmathresult}         %   and store in \angle
+          \fi
+    };
+    \end{scope}
+}
+
+\begin{document}
+\begin{tikzpicture}[scale=1]
+	\piechart{46.6/Chrome,24.6/Internet Explorer,20.4/Firefox,5.1/Safari,1.3/Opera,2.0/Other}
+\end{tikzpicture}
+\end{document}

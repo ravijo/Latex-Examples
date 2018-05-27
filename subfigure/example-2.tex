@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[hang]{subfigure}
+% subfigure package is deprecated
+% use either the subfig or the subcaption package
+% checkout example-3.tex that uses the subcaption package
+
+\begin{document}
+\begin{figure}[h]
+  \centering
+  \subfigure[One line caption]{%
+    \includegraphics[width=0.3\linewidth]{example-image-a}%
+  }
+  \subfigure[Little longer caption takes over 2 lines]{%
+    \includegraphics[width=0.3\linewidth]{example-image-b}%
+  }
+  \subfigure[One line caption]{%
+    \includegraphics[width=0.3\linewidth]{example-image-c}%
+  }
+  \caption{Various example images}
+  \label{fig:example_images}
+\end{figure}
+\end{document}

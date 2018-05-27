@@ -1,0 +1,24 @@
+\documentclass{article}%standalone can be used
+\usepackage[most]{tcolorbox}
+
+\tcbset{enhanced, fontupper=\bfseries, notitle, sharp corners, halign=center, valign=center}
+
+\begin{document}
+\begin{tcbitemize}[%
+    raster equal height=rows, 
+    raster columns=4,
+    raster equal height,
+    raster every box/.style={height=2cm},
+    raster column skip=1mm,
+    raster row skip=1mm,
+    colback=green!70!black]
+\tcbitem VC++
+\tcbitem VB.NET
+\tcbitem C\#.NET
+\tcbitem Others
+\tcbitem[colback=blue!40, raster multicolumn=4]
+COM-API Interface
+\tcbitem[colback=yellow!50, raster multicolumn=4]
+Autodesk Inventor Application
+\end{tcbitemize}
+\end{document}

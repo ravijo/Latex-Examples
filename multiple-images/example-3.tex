@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\begin{document}
+\begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+    \node (img1) {\includegraphics[height=2cm]{example-image}};
+    \node[right=of img1] (img2) {\includegraphics[height=1cm]{example-image}};
+    \node[right=of img2] (img3) {\includegraphics[height=3cm]{example-image}};
+    \node[right=of img3] (img4) {\includegraphics[height=1cm]{example-image}};
+    \node[right=of img4] (img5) {\includegraphics[height=2cm]{example-image}};
+\end{tikzpicture}
+\end{document}
