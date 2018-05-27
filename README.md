@@ -28,3 +28,6 @@ ravi@home:~/Downloads/install-tl-20180527$ sudo ./install-tl
 * [Standalone](standalone)
 * [Subfigure](subfigure)
 * [Tikz Coordinates](tikz-coordinates)
+
+## Source
+Most of them are designed by me. Rest are taken from internet.
