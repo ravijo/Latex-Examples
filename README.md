@@ -13,3 +13,9 @@ Make sure TeX/LaTeX is installed. I am using TeXLive 2018 on Ubuntu 14.04 LTS 64
 ravi@home:~/Downloads/install-tl-20180527$ sudo ./install-tl
 ```
 *This takes more than 30 minutes. So take a coffee break!*
+
+[include](block-diagram/README.md)
+
+test
+
+![example-2](block-diagram/README.md)
