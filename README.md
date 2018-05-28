@@ -8,7 +8,7 @@ Make sure TeX/LaTeX is installed. I am using TeXLive 2018 on Ubuntu 14.04 LTS 64
 1. Open the following page [Installing TeX Live over the Internet](https://tug.org/texlive/acquire-netinstall.html)
 1. Download [install-tl-unx.tar.gz](http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz)
 1. Unzip the downloaded file and go inside the folder
-1. Open a terminal and execute `install-tl`. See below-
+1. Open a terminal or press <kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>T</kbd> and execute `install-tl`. See below-
 ```
 ravi@home:~/Downloads/install-tl-20180527$ sudo ./install-tl
 ```
