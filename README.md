@@ -31,3 +31,6 @@ ravi@home:~/Downloads/install-tl-20180527$ sudo ./install-tl
 
 ## Source
 Most of them are designed by me. Rest are taken from internet.
+
+## Issues (or Error Reporting)
+Please check [here](https://github.com/ravijo/Latex-Examples/issues) and create issues accordingly.
